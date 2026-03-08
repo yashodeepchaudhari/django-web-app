@@ -28,6 +28,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# AWS S3 Configuration
+
+AWS_ACCESS_KEY_ID = 'AKIATKTTEJNQNJALL6XC'
+AWS_SECRET_ACCESS_KEY = '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'
+
+AWS_STORAGE_BUCKET_NAME = 'django-web-app-static-files'
+AWS_S3_REGION_NAME = 'ap-south-1'
+
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
 
 # Application definition
 
@@ -40,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'project',
     'django_cleanup',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -77,10 +88,14 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+ 'default': {
+  'ENGINE': 'django.db.backends.mysql',
+  'NAME': 'django-web-app-db',
+  'USER': 'admin',
+  'PASSWORD': 'Yash12345678',
+  'HOST': 'django-web-app-db.cf6um6meuzuz.ap-south-1.rds.amazonaws.com',
+  'PORT': '3306',
+ }
 }
 
 
