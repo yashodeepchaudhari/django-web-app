@@ -137,7 +137,7 @@ USE_TZ = True
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
+STATIC_URL = 'dq9jr854mm6jb.cloudfront.net'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
